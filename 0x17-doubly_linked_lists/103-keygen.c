@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
     }
 
     char codex[CODEX_LENGTH] = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
-    char password[8]; // Increased password size to account for '\0'
+    char password[8];
     
     if (strlen(argv[1]) < 1) {
         printf("Input string must not be empty.\n");
