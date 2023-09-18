@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _strcat -  A concatenates of two strings.
+ * _strcat - The func that concatenates two strings.
  *
  * @dest: The string dest
  * @src: The string src
- *
  * Return: It returns char
 */
 
@@ -22,5 +21,5 @@ char *_strcat(char *dest, char *src)
 		d++;
 		r++;
 	}
-	return dest;
+	return (dest);
 }
