@@ -6,24 +6,21 @@
  *
  * Return: My pointer to hash table
  */
-
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *table;
+	hash_table_t *ht;
+	unsigned long int x;
 
-	if (size == 0)
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
 		return (NULL);
 
-	h_table = calloc(1, sizeof(hash_table_t));
-	if (h_table == NULL)
+	ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
 		return (NULL);
+	for (x = 0; x < size; x++)
+		ht->array[x] = NULL;
 
-	h_table->size = size;
-	h_table->array = calloc(size, sizeof(hash_node_t *));
-	if (h_table->array == NULL)
-	{
-		free(h_table);
-		return (NULL);
-	}
-	return (h_table);
+	return (ht);
 }
