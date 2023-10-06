@@ -1,21 +1,13 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_print - It prints the k
- * ey-value pairs from a hash table
- * @ht: A pointer to the hash table to be printed
+ * hash_table_print - function to print the key:value from ht
+ * @ht: pointer to hash table
  *
- * This function iterates through the 
- * given hash table and prints its key-value
- * pairs in the format: '<key>: '<value>''. 
- * The pairs are enclosed within curly
- * braces and separated by commas, resulting in a 
- * readable representation of the
- * hash table.
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int x = 0;
+	unsigned long int i = 0;
 	hash_node_t  *bucket;
 	int not_fin = 0;
 
@@ -23,9 +15,9 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 
 	printf("{");
-	for (x = 0; x < ht->size; x++)
+	for (i = 0; i < ht->size; i++)
 	{
-		bucket = ht->array[x];
+		bucket = ht->array[i];
 		while (bucket)
 		{
 			if (not_fin)
