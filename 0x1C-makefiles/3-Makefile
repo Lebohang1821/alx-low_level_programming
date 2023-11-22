@@ -1,0 +1,31 @@
+CC = gcc
+
+# Source files for program
+SRC = main.c school.c
+
+# Object files derived from source files
+OBJ = $(SRC:.c=.o)
+
+# Name of executable to be generated
+NAME = school
+
+# Command for removing files
+RM = rm -f
+
+# Target rule to build executable 'school'
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Phony target to clean up generated and temporary files
+clean:
+	$(RM) *~ $(NAME)
+
+# Phony target to clean up object files
+oclean:
+	$(RM) $(OBJ)
+
+# Phony target to clean up all generated files
+fclean: clean oclean
+
+# It target to perform a clean build by removing files and rebuilding program
+re: fclean all
