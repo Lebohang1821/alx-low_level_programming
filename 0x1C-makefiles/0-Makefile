@@ -1,0 +1,3 @@
+all: main.c school.c
+# Compile main.c and school.c using gcc
+	gcc main.c school.c -o school
