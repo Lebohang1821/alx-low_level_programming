@@ -1,0 +1,8 @@
+CC = gcc
+
+# Source files for the program
+SRC = main.c school.c
+
+# Target rule to build the executable 'school'
+all: $(SRC)
+	$(CC) $(SRC) -o school
