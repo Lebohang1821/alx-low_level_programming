@@ -1,7 +1,9 @@
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
+# Name of executable to be generated
 NAME = school
+# Compiler flags for additional warnings and errors
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 .PHONY: all clean oclean fclean re
@@ -13,6 +15,7 @@ clean:
 	$(RM) *~ $(NAME)
 
 oclean:
+# Command for removing files
 	$(RM) $(OBJ)
 
 fclean: clean oclean
